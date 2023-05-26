@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const TaskCard = ({ task, handleDelete, moveCard, updateTask}) => {
   const [edit, setEdit] = useState(false);
@@ -8,6 +8,10 @@ const TaskCard = ({ task, handleDelete, moveCard, updateTask}) => {
     updateTask(title,desc,task.id);
     setEdit(false);
   };
+  useEffect(()=>{
+    setTitle(task.title);
+    setDesc(task.description);
+  },[edit])
   return (
     <div className="TaskCard">
       {edit ? (
