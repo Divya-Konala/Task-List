@@ -66,23 +66,45 @@ select{
   flex-wrap: wrap;
 }
 .lists .list{
-  width: 500px;
+  width: 400px;
   text-align: center;
   height: fit-content;
   margin: 20px 0px;
+  background-color: #212A3E;
+  color: #F1F6F9;
+  border-radius: 10px;
+  box-shadow: rgba(46, 59, 240, 0.4) 5px 5px, rgba(46, 59, 240, 0.3) 10px 10px, rgba(46, 59, 240, 0.3) 15px 15px, rgba(46, 59, 240, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+  position: relative;
 }
-.list:first-child{
+.lists .list::after{
+  /* content: " ";
+  height: 70px;
+  width: 70px;
+  border-top: 2px solid red;
+  border-left: 2px solid red;
+  position: absolute;
+  left: 0px; */
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top: 60px solid transparent;
+  border-left: 60px solid #F1F6F9;
+}
+/* .list:first-child{
   border-right: 1px solid #212A3E;
 }
 .list:last-child{
   border-left: 1px solid #212A3E;
-}
+} */
 .TaskCard{
   padding: 10px 20px;
   margin: 30px 20px;
   text-align: left;
   font-size: 1rem;
-  box-shadow: rgba(43, 43, 184, 0.2) 0px 7px 29px 0px;
+  color: #212A3E;
+  background-color: #F1F6F9;
+  /* box-shadow: rgba(43, 43, 184, 0.2) 0px 7px 29px 0px; */
 }
 .TaskCard button{
   margin-right: 20px;
@@ -98,4 +120,20 @@ select{
   margin-bottom: 10px;
   font-size: 1rem;
   height: 30px;
+}
+@media screen and (max-width:768px){
+  .TaskList>h1{
+    margin-top: 70px;
+  }
+  .TaskForm{
+    width: 80vw;
+  }
+}
+@media screen and (max-width:450px){
+  .list button{
+    margin-bottom: 10px;
+  }
+  .lists .list{
+    width: 80%;
+  }
 }
